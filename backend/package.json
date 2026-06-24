@@ -1,0 +1,26 @@
+{
+  "name": "viaduc-backend",
+  "version": "1.0.0",
+  "description": "Viaduc ERP API - Recycling & Scrap Trading",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "seed": "node src/utils/seed.js",
+    "clear-data": "node src/utils/clearData.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "exceljs": "^4.4.0",
+    "express": "^4.21.0",
+    "express-validator": "^7.2.0",
+    "firebase-admin": "^12.6.0",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "pdfkit": "^0.15.0"
+  }
+}

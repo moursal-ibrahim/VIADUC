@@ -41,11 +41,18 @@ function resolveFirebaseConfig() {
   };
 }
 
+const defaultClientUrl = 'http://localhost:5173';
+const clientUrls = (process.env.CLIENT_URL || defaultClientUrl)
+  .split(',')
+  .map((url) => url.trim())
+  .filter(Boolean);
+
 export const env = {
   port: parseInt(process.env.PORT || '5000', 10),
   nodeEnv: process.env.NODE_ENV || 'development',
   jwtSecret: process.env.JWT_SECRET || 'viaduc-dev-secret-change-me',
   jwtExpiresIn: process.env.JWT_EXPIRES_IN || '7d',
-  clientUrl: process.env.CLIENT_URL || 'http://localhost:5173',
+  clientUrl: clientUrls[0] || defaultClientUrl,
+  clientUrls,
   firebase: resolveFirebaseConfig(),
 };
